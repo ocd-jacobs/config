@@ -71,3 +71,6 @@ function mdo() {
   $PROG $(locate $2 | fzy)
 }
 
+# Set color mode for ls
+alias ls=ls\ --color
+

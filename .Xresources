@@ -46,6 +46,9 @@ xterm*scrollTtyOutput: false
 ! rxvt-unicode configuration                                         !
 ! ------------------------------------------------------------------ !
 
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+urxvt-256color.loginShell: true
+
 ! Disable scrollbar
 urxvt-256color.scrollBar: false
 
@@ -70,7 +73,8 @@ urxvt-256color.color15: rgb:fc/fc/fc
 
 ! Set transparency
 urxvt-256color.depth: 32
-urxvt-256color.background: rgba:0000/0000/0200/e400
+urxvt-256color.background: rgba:0000/0000/0200/e200
 
 ! Set font
 urxvt-256color.font: xft:Bitstream Vera Sans Mono:pixelsize=15
+
