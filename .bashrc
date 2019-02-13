@@ -71,6 +71,6 @@ function mdo() {
   $PROG $(locate $2 | fzy)
 }
 
-# Set color mode for ls
+# Set color mode for ls. Needed for urxvt.
 alias ls=ls\ --color
 
