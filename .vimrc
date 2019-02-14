@@ -93,6 +93,10 @@ call plug#end()
   nnoremap / /\C\v
   nnoremap ? ?\C\v
 
+  "Keybindings for netrw
+  nnoremap <Leader>n :Explore<CR>
+  nnoremap <Leader>d :bd<CR>
+
   "swith off search highlight
   nnoremap <Leader>o :nohl<CR>
 
@@ -105,8 +109,12 @@ call plug#end()
   inoremap <down>     <nop>
   inoremap <left>     <nop>
   inoremap <right>    <nop>
-  nnoremap <pageup>   <nop>
-  nnoremap <pagedown> <nop>
+
+  "Map page commands to buffer commands
+  nnoremap <pagedown> :bn<cr>
+  inoremap <pagedown> :bn<cr>
+  nnoremap <pageup>   :bp<cr>
+  inoremap <pageup>   :bp<cr>
 
 " map escape to pressing jk at the same time (thanks touchbar)
   inoremap jk <Esc>
