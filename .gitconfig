@@ -1,0 +1,7 @@
+[user]
+	email = jjacobs@xs4all.nl
+	name = John Jacobs
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
