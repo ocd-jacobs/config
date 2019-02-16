@@ -32,13 +32,13 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Disable mouse focus
-focus_follows)mouse no
+focus_follows_mouse no
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+Return exec --no-startup-id urxvt-256color
 
 # kill focused window
 bindsym $mod+Shift+q kill
