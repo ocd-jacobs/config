@@ -4,7 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
- '(custom-enabled-themes (quote (wombat)))
  '(delete-selection-mode nil)
  '(inhibit-startup-echo-area-message t)
  '(inhibit-startup-screen t)
@@ -74,6 +73,9 @@
     (ac-config-default)
     (global-auto-complete-mode t)
     ))
+
+;; color theme
+(load-theme 'wombat)
 
 ;; Evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
