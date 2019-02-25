@@ -28,7 +28,7 @@
 test -s ~/.alias && . ~/.alias || true
 
 # Set terminal emulator
-export TERM=xterm-256color
+export TERM=rxvt-unicode
 
 # Set custom prompt
 #export PS1="\e[0;36m\w\$ \e[m"

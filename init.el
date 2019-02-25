@@ -1,7 +1,3 @@
-;; Force initialization of Melpa packages
-(setq package-enable-at-startup nil)
-(package-initialize)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -15,12 +11,9 @@
  '(initial-buffer-choice nil)
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
- '(package-archives
+ '(package-selected-packages
    (quote
-    (("melpa-stable" . "https://stable.melpa.org/packages/")
-     ("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.milkbox.net/packages/"))))
- '(package-selected-packages (quote (evil undo-tree)))
+    (auto-complete org-bullets which-key try use-package undo-tree evil)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
@@ -34,7 +27,34 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; UI settings
 (setq default-cursor-type '(bar . 3))
+
+;; Setup package repositories
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
+	     '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package try
+  :ensure t)
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+;; Org-mode
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; General modes
 
@@ -42,7 +62,18 @@
 (defalias 'list-buffers 'ibuffer)
 
 ;; make buffer switch command show suggestions (C-x b)
+(setq ido-enable-flex-maiching t)
+(setq ido-everywhere t)
 (ido-mode 1)
+
+;; auto-complete
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    ))
 
 ;; Evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
