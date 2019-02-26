@@ -85,7 +85,7 @@
 
 (use-package ivy
   :ensure t
-  :init
+  :config
   (progn
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t)
@@ -110,6 +110,9 @@
 
 ;; color theme
 (load-theme 'wombat)
+
+(global-hl-line-mode)
+(set-face-background hl-line-face "gray20")
 
 ;; linum mode
 (global-linum-mode 1)
