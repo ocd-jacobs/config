@@ -12,7 +12,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete org-bullets which-key try use-package undo-tree evil)))
+    (undo-tre yasnippet jedi flycheck auto-complete org-bullets which-key try use-package undo-tree evil)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)

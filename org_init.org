@@ -1,15 +1,19 @@
 #+STARTUP: overview
 * UI tweaks
-#+BEGIN_SRC emacs-lisp
-(setq default-cursor-type '(bar . 3))
+  #+BEGIN_SRC emacs-lisp
+    (setq default-cursor-type '(bar . 3))
 
-(load-theme 'wombat)
+    (load-theme 'wombat)
 
-(global-hl-line-mode)
-(set-face-background hl-line-face "gray20")
+    (global-hl-line-mode)
+    (set-face-background hl-line-face "gray20")
+    (set-face-attribute hl-line-face nil :underline nil)
 
-(global-linum-mode 1)
-#+END_SRC  
+    (global-linum-mode 1)
+
+    (global-auto-revert-mode 1)
+    (setq auto-revert-verbose t)
+  #+END_SRC  
 * Org-mode
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
@@ -69,6 +73,38 @@
 (require 'evil)
 (evil-mode 1)
 #+END_SRC
+* Syntax checking and linting
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :config
+    (global-flycheck-mode t))
+#+END_SRC
+* Python
+#+BEGIN_SRC emacs-lisp
+  (use-package jedi
+    :ensure t
+    :init
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (add-hook 'python-mode-hook 'jedi:ac-setup)
+    )
+#+END_SRC
+* Snippets
+  #+BEGIN_SRC emacs-lisp
+    (use-package yasnippet
+      :ensure t
+      :init
+      (yas-global-mode 1)
+      )
+  #+END_SRC
+* Undo / Redo
+  #+BEGIN_SRC emacs-lisp
+    (use-package undo-tree
+      :ensure t
+      :init
+      (global-undo-tree-mode)
+      )
+  #+END_SRC
 * Learning packages
 #+BEGIN_SRC emacs-lisp
 (use-package try
