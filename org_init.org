@@ -121,7 +121,7 @@
                    ("org" (name . "^.*org$"))
                    ("magit" (mode . magit-mode))
                    ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
-                   ("programming" (or
+                   ("code" (or
                                    (mode . perl-mode)
                                    (mode . emacs-lisp-mode)
                                    (mode . python-mode)
@@ -147,6 +147,14 @@
     (add-to-list 'load-path "~/.emacs.d/ess")
     (require 'ess-site)
     (require 'ess-r-mode)
+  #+END_SRC
+* PCRE
+  #+BEGIN_SRC emacs-lisp
+    (use-package pcre2el
+      :ensure t
+      :config 
+      (pcre-mode)
+      )
   #+END_SRC
 * Learning packages
   #+BEGIN_SRC emacs-lisp
