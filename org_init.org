@@ -66,13 +66,6 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
     ))
 #+END_SRC
-* VIM emulation
-#+BEGIN_SRC emacs-lisp
-;; Evil mode
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-(evil-mode 1)
-#+END_SRC
 * Syntax checking and linting
 #+BEGIN_SRC emacs-lisp
   (use-package flycheck
@@ -82,12 +75,26 @@
 #+END_SRC
 * Python
 #+BEGIN_SRC emacs-lisp
-  (use-package jedi
+  (setq py-python-command "python3")
+  (setq python-shell-interpreter "python3")
+
+  (use-package elpy
     :ensure t
-    :init
-    (add-hook 'python-mode-hook 'jedi:setup)
-    (add-hook 'python-mode-hook 'jedi:ac-setup)
-    )
+    :config 
+    (elpy-enable))
+
+  (use-package virtualenvwrapper
+    :ensure t
+    :config
+    (venv-initialize-interactive-shells)
+    (venv-initialize-eshell))
+
+  ;(use-package jedi
+  ;  :ensure t
+  ;  :init
+  ;  (add-hook 'python-mode-hook 'jedi:setup)
+  ;  (add-hook 'python-mode-hook 'jedi:ac-setup)
+  ;  )
 #+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
@@ -113,4 +120,11 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+#+END_SRC
+* VIM emulation
+#+BEGIN_SRC emacs-lisp
+;; Evil mode
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
 #+END_SRC
