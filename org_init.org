@@ -112,6 +112,35 @@
       (global-undo-tree-mode)
       )
   #+END_SRC
+* Ibuffer
+  #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("dired" (mode . dired-mode))
+                 ("org" (name . "^.*org$"))
+                 ("magit" (mode . magit-mode))
+                 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+                 ("programming" (or
+                                 (mode . perl-mode)
+                                 (mode . emacs-lisp-mode)
+                                 (mode . python-mode)
+                                 (mode . c++-mode)))
+                 ("emacs" (or
+                           (name . "^\\*scratch\\*$")
+                           (name . "^\\*Messages\\*$")))
+                 ))))
+  (add-hook 'ibuffer-mode-hook
+            (lambda ()
+              (ibuffer-auto-mode 1)
+              (ibuffer-switch-to-saved-filter-groups "default")))
+
+  ;; Don't show filter groups if there are no buffers in that group
+  (setq ibuffer-show-empty-filter-groups nil)
+
+  ;; Don't ask for confirmation to delete marked buffers
+  (setq ibuffer-expert t)
+  #+END_SRC
 * Learning packages
 #+BEGIN_SRC emacs-lisp
 (use-package try
@@ -123,8 +152,13 @@
 #+END_SRC
 * VIM emulation
 #+BEGIN_SRC emacs-lisp
-;; Evil mode
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-(evil-mode 1)
+  (add-to-list 'load-path "~/.emacs.d/evil")
+  (require 'evil)
+  (evil-mode 1)
 #+END_SRC
+* ESS
+  #+BEGIN_SRC emacs-lisp
+    (add-to-list 'load-path "~/.emacs.d/ess")
+    (require 'ess-site)
+    (require 'ess-r-mode)
+  #+END_SRC
