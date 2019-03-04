@@ -8,4 +8,5 @@ cp ~/.Xresources ~/Repos/config/
 cp ~/.Xdefaults ~/Repos/config/
 cp ~/.config/i3/config ~/Repos/config/config_i3
 cp ~/.gitconfig ~/Repos/config/
+cp ~/bin/git_diff_wrapper ~/Repos/config/
 

@@ -2,8 +2,8 @@
 	email = jjacobs@xs4all.nl
 	name = John Jacobs
 [diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[merge]
-	tool = vimdiff
+	external=git_diff_wrapper
+[pager]
+	diff =
+[color]
+	ui=auto
