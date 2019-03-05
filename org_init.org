@@ -164,6 +164,11 @@
         (bind-key "C-x g" 'magit-status)
         )
   #+END_SRC
+* Dired+
+  #+BEGIN_SRC emacs-lisp
+    (add-to-list 'load-path "~/.emacs.d/dired+")
+    (require 'dired+)
+  #+END_SRC
 * Learning packages
   #+BEGIN_SRC emacs-lisp
     (use-package try
