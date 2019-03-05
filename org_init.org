@@ -156,6 +156,14 @@
       (pcre-mode)
       )
   #+END_SRC
+* Git
+  #+BEGIN_SRC emacs-lisp
+      (use-package magit
+        :ensure t
+        :init
+        (bind-key "C-x g" 'magit-status)
+        )
+  #+END_SRC
 * Learning packages
   #+BEGIN_SRC emacs-lisp
     (use-package try
