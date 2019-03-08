@@ -145,10 +145,19 @@
 * ESS
   #+BEGIN_SRC emacs-lisp
     (add-to-list 'load-path "~/.emacs.d/ess")
-    (setq ess-sas-edit-keys-toggle nil)
+    (setq ess-sas-tab-stop-list '(2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40))
+    (setq ess-sas-edit-keys-toggle t)
     (require 'ess-site)
     (require 'ess-r-mode)
-    (setq sas-indent-width 2)
+    (setq sas-indent-width                  2)
+    (setq ess-indent-level                  2)
+    (setq ess-continued-statement-offset    2)
+    (setq ess-brace-offset                  0)
+    (setq ess-arg-function-offset           2)
+    (setq ess-expression-offset             4)
+    (setq ess-else-offset                   0)
+    (setq ess-close-brace-offset            0)
+    (setq ess-nuke-trailing-whitespace-p    t)
   #+END_SRC
 * PCRE
   #+BEGIN_SRC emacs-lisp
