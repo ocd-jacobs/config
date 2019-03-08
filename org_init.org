@@ -145,8 +145,10 @@
 * ESS
   #+BEGIN_SRC emacs-lisp
     (add-to-list 'load-path "~/.emacs.d/ess")
+    (setq ess-sas-edit-keys-toggle nil)
     (require 'ess-site)
     (require 'ess-r-mode)
+    (setq sas-indent-width 2)
   #+END_SRC
 * PCRE
   #+BEGIN_SRC emacs-lisp
