@@ -10,6 +10,7 @@
     (set-face-attribute hl-line-face nil :underline nil)
 
     (global-linum-mode 1)
+    (column-number-mode 1)
 
     (global-auto-revert-mode 1)
     (setq auto-revert-verbose t)
@@ -154,7 +155,7 @@
     (setq ess-continued-statement-offset    2)
     (setq ess-brace-offset                  0)
     (setq ess-arg-function-offset           2)
-    (setq ess-expression-offset             4)
+    (setq ess-expression-offset             2)
     (setq ess-else-offset                   0)
     (setq ess-close-brace-offset            0)
     (setq ess-nuke-trailing-whitespace-p    t)
