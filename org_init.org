@@ -14,6 +14,8 @@
 
     (global-auto-revert-mode 1)
     (setq auto-revert-verbose t)
+
+    (put 'dired-find-alternate-file 'disabled nil)
   #+END_SRC  
 * Org
   #+BEGIN_SRC emacs-lisp
