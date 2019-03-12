@@ -172,16 +172,24 @@
   #+END_SRC
 * Git
   #+BEGIN_SRC emacs-lisp
-      (use-package magit
-        :ensure t
-        :init
-        (bind-key "C-x g" 'magit-status)
-        )
+    (use-package magit
+      :ensure t
+      :init
+      (bind-key "C-x g" 'magit-status)
+      )
   #+END_SRC
 * Dired+
   #+BEGIN_SRC emacs-lisp
     (add-to-list 'load-path "~/.emacs.d/dired+")
     (require 'dired+)
+  #+END_SRC
+* Disable mouse
+  #+BEGIN_SRC emacs-lisp
+    (use-package disable-mouse
+      :ensure t
+      :config 
+      (global-disable-mouse-mode)
+      )
   #+END_SRC
 * Learning packages
   #+BEGIN_SRC emacs-lisp
@@ -197,4 +205,10 @@
     (add-to-list 'load-path "~/.emacs.d/evil")
     (require 'evil)
     (evil-mode 1)
+
+    (mapc #'disable-mouse-in-keymap
+      (list evil-motion-state-map
+            evil-normal-state-map
+            evil-visual-state-map
+            evil-insert-state-map))
   #+END_SRC
