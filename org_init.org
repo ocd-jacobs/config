@@ -184,6 +184,7 @@
     (require 'dired+)
   #+END_SRC
 * Disable mouse
+  ; Use the github version to disable the mouse in evil-mode.
   #+BEGIN_SRC emacs-lisp
     (use-package disable-mouse
       :ensure t
@@ -205,10 +206,50 @@
     (add-to-list 'load-path "~/.emacs.d/evil")
     (require 'evil)
     (evil-mode 1)
-
+    ; Disable mouse
     (mapc #'disable-mouse-in-keymap
       (list evil-motion-state-map
             evil-normal-state-map
             evil-visual-state-map
             evil-insert-state-map))
+
+    (define-minor-mode my-override-mode
+      "Overrides all major and minor mode keys" t)
+
+    ; Disable cursor keys
+    (defvar my-override-map (make-sparse-keymap "my-override-map")
+      "Override all major and minor mode keys")
+
+    (add-to-list 'emulation-mode-map-alists
+      `((my-override-mode . ,my-override-map)))
+
+    (define-key my-override-map (kbd "<left>")
+      (lambda ()
+        (interactive)
+        (message "Use editor keys: h or C-b for Left")))
+
+    (define-key my-override-map (kbd "<right>")
+      (lambda ()
+        (interactive)
+        (message "Use editor keys: l or C-f for Right")))
+
+    (define-key my-override-map (kbd "<up>")
+      (lambda ()
+        (interactive)
+        (message "Use editor keys: k or C-p for Up")))
+
+    (define-key my-override-map (kbd "<down>")
+      (lambda ()
+        (interactive)
+        (message "Use editor keys: j or C-n for Down")))
+
+    (evil-make-intercept-map my-override-map)
+  #+END_SRC
+* Guru
+  #+BEGIN_SRC emacs-lisp
+    (use-package guru-mode
+      :ensure t
+      :config
+      (guru-global-mode)
+      )
   #+END_SRC

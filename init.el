@@ -16,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (disable-mouse magit pcre2el julia-mode julia virtualenvwrapper elpy undo-tre yasnippet jedi flycheck auto-complete org-bullets which-key try use-package undo-tree evil)))
+    (guru-mode disable-mouse magit pcre2el julia-mode julia virtualenvwrapper elpy undo-tre yasnippet jedi flycheck auto-complete org-bullets which-key try use-package undo-tree evil)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
