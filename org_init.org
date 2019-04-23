@@ -129,6 +129,7 @@
                                    (mode . emacs-lisp-mode)
                                    (mode . python-mode)
                                    (mode . ess-mode)
+				   (mode . sh-mode)
                                    (mode . c++-mode)))
                    ("emacs" (or
                              (name . "^\\*scratch\\*$")
@@ -161,6 +162,11 @@
     (setq ess-else-offset                   0)
     (setq ess-close-brace-offset            0)
     (setq ess-nuke-trailing-whitespace-p    t)
+
+    (add-hook 'ess-mode-hook
+      (lambda ()
+        (set (make-local-variable 'comment-start) "/*")
+	(set (make-local-variable 'comment-end) "*/")))
   #+END_SRC
 * PCRE
   #+BEGIN_SRC emacs-lisp
