@@ -1,12 +1,11 @@
+#!/usr/bin/bash
 cp ~/.vimrc ~/Repos/config/
-cp ~/.emacs.d/init.el ~/Repos/config/
-cp ~/.emacs.d/org_init.org ~/Repos/config/
 cp ~/.bashrc ~/Repos/config/
-cp ~/.config/conky/conky.conf ~/Repos/config/
-cp ~/.config/autostart/conky.desktop ~/Repos/config/
-cp ~/.Xresources ~/Repos/config/
-cp ~/.Xdefaults ~/Repos/config/
-cp ~/.config/i3/config ~/Repos/config/config_i3
 cp ~/.gitconfig ~/Repos/config/
-cp ~/bin/git_diff_wrapper ~/Repos/config/
+cp ~/bin/git_diff_wrapper ~/Repos/config/bin/
+cp ~/bin/load_shared ~/Repos/config/bin/
+cp ~/bin/tml ~/Repos/config/bin/
+cp -R ~/.config/alacritty ~/Repos/config
+cp -R ~/.config/conky ~/Repos/config
+cp -R ~/.config/neofetch ~/Repos/config
 

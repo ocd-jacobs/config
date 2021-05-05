@@ -28,7 +28,7 @@
 test -s ~/.alias && . ~/.alias || true
 
 # Set terminal emulator
-export TERM=rxvt-unicode
+export TERM=xterm-256color
 
 # Set custom prompt
 #export PS1="\e[0;36m\w\$ \e[m"
@@ -36,41 +36,23 @@ export TERM=rxvt-unicode
 # Set readline VI mode
 set -o vi
 
-# neovim alias
-#alias nvim=/home/john/bin/nvim.appimage
-
 # Set history options
 HISTCONTROL=ignoreboth
 HISTIGNORE=":ls*:history*:cd*:fcd*:fdo*:clear:man*:mc:exit:mdo*"
 shopt -s histappend
 
-# fuzzy search functions
-function fcd() {
-  cd $(find $1 -type d | fzy)
-}
-
-function fdo() {
-  PROG=$1
-
-  if [ $PROG == 'nvim' ]
-  then
-    PROG="nvim.appimage"
-  fi
-  
-  $PROG $(find $2 -type f | fzy)
-}
-
-function mdo() {
-  PROG=$1
-
-  if [ $PROG == 'nvim' ]
-  then
-    PROG="nvim.appimage"
-  fi
-  
-  $PROG $(locate $2 | fzy)
-}
-
-# Set color mode for ls. Needed for urxvt.
-alias ls=ls\ --color
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/john/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/john/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/john/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/john/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

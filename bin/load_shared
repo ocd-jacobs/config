@@ -1,0 +1,4 @@
+/usr/bin/vmhgfs-fuse .host:/ /home/john/shares -o subtype=vmhgfs-fuse,allow_other
+echo SHARES LOADED
+echo
+

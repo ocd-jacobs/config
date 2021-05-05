@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+SESSION=develop
+tmux new-session -d -s $SESSION 
+tmux rename-window -t 0 dev
+tmux split-window -h
+tmux split-window
+tmux select-pane -t 0
+tmux resize-pane -R 10
+tmux attach -t develop
+

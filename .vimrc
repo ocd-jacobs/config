@@ -21,7 +21,6 @@ call plug#end()
 "Basic settings
   set nocompatible
   set number
-  set relativenumber
   set nowrap
   set sidescroll=5
   set shiftwidth=2
