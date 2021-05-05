@@ -81,6 +81,18 @@ call plug#end()
   nnoremap <Leader>u :s/\/\*\(.*\S\)\s*\*\//\1/<bar>nohl<CR>
   vnoremap <Leader>u :s/\/\*\(.*\S\)\s*\*\//\1/<bar>nohl<CR>
 
+  "Toggle relative line number
+  function! NumberToggle()
+      if(&nu == 1)
+          set nu!
+          set rnu
+      else
+          set nornu
+          set nu
+      endif
+  endfunction
+  nnoremap <Leader>r :call NumberToggle()<CR>
+
   "Reapeatable in- and outdenting of blocks
   vnoremap > >gv
   vnoremap < <gv
