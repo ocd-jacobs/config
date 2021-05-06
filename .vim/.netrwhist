@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/john/.config/alacritty'
+let g:netrw_dirhist_2='/home/john/Documents/lpthw'
+let g:netrw_dirhist_1='/home/john'

@@ -12,4 +12,6 @@ rm -rf ~/Repos/config/conky
 cp -R ~/.config/conky ~/Repos/config
 rm -rf ~/Repos/config/neofetch
 cp -R ~/.config/neofetch ~/Repos/config
+rm -rf ~/Repos/config/.vim
+cp -R ~/.vim ~/Repos/config
 
