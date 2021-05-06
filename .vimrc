@@ -1,23 +1,6 @@
 " .vimrc linux version d.d. 02-09-2017
 "  vim 8.0.964 on OpenSuse Linux 42.3
 
-" Autoload vimplug plugin manager
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-  "Plug ' put plugin here'
-
-" Initialize plugin system
-call plug#end()
-
 "Basic settings
   set nocompatible
   set number
