@@ -64,6 +64,9 @@
   nnoremap <Leader>u :s/\/\*\(.*\S\)\s*\*\//\1/<bar>nohl<CR>
   vnoremap <Leader>u :s/\/\*\(.*\S\)\s*\*\//\1/<bar>nohl<CR>
 
+  "FZF bindings
+  nnoremap <Leader>z :FZF<CR>
+
   "Toggle relative line number
   function! NumberToggle()
       if(&nu == 1)

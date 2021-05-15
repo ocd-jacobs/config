@@ -5,6 +5,7 @@ tmux rename-window -t 0 dev
 tmux split-window -h
 tmux split-window
 tmux select-pane -t 0
-tmux resize-pane -R 10
+tmux resize-pane -R 15
+tmux send-keys "clear ; neofetch" ENTER
 tmux attach -t develop
 

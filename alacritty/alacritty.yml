@@ -5,7 +5,7 @@ env:
 
 window:
   dimensions:
-    columns: 100
+    columns: 160
     lines: 42
 
   padding:
