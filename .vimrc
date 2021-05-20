@@ -33,6 +33,8 @@
   set nowrapscan
   set showcmd
   set scrolloff=5
+  set splitright
+  set splitbelow
 
 "Syntax highlighting
   filetype on
