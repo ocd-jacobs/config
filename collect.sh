@@ -2,6 +2,7 @@
 cp ~/.vimrc ~/Repos/config/
 cp ~/.bashrc ~/Repos/config/
 cp ~/.gitconfig ~/Repos/config/
+cp ~/.tmux.conf ~/Repos/config/
 rm ~/Repos/config/bin/*
 cp ~/bin/git_diff_wrapper ~/Repos/config/bin/
 cp ~/bin/load_shared ~/Repos/config/bin/
